@@ -43,25 +43,45 @@ const value4 = [value1, value2, value3]
 // 1. Create a function to set the content of the first element — the function should have a single parameter called `number`
   // 1a. Set the `element1` variable's `style.color` property equal to green, or your favorite color
   // 1b. Set the `innerHTML` of `element1` variable equal to the `number` parameter
-
+function FuncOne (number) {
+  element1.style.color = 'blue';
+  element1.innerHTML = number;
+}
 
 // 2. Create a function to set the content of the second element — the function should have a single parameter called `string`
   // 2a. Set the `element2` variable's `style.color` property equal to green, or your favorite color
   // 2b. Set the `innerHTML` of `element2` variable equal to the `string` parameter
-
+  function FuncTwo (string) {
+    element2.style.color = 'pink';
+    element2.innerHTML = string;
+  }
 
 // 3. Create a function to set the content of the third element — the function should have a single parameter called `element`
   // 3a. Set the `element3` variable's `style.color` property equal to green, or your favorite color
   // 3b. Set the `innerHTML` of `element3` variable equal to the `element` parameter
 
+  function FuncThree (element) {
+    element3.style.color = 'orange';
+    element3.innerHTML = element;
+  }
 
-// 4. Create a function to set the content of the fourth element — the function should have a single parameter called `array`
+// 4. Create a function to set the content of the fourth element — 
+//the function should have a single parameter called `array`
   // 4a. Set the `element4` variable's `style.color` property equal to green, or your favorite color
   // 4b. Create a variable to store what will be printed and set it equal to an empty string, `''`
   // 4c. Loop over the `array` parameter
     // 4cc. Concatenate `array[i]` to the printed variable created above for each iteration 
   // 4d. Set the `innerHTML` of `element4` variable equal to the printed variable created above
 
+  function FinalFunc (array) {
+    element4.style.color = 'firebrick';
+    let toPrint = '';
+    for (let i =0; i < array.length; i++) {
+      toPrint += array[i];
+    }
+
+    element4.innerHTML = toPrint;
+  }
 
 // 5. Call each function you've created in the associated event listeners below, using the `value` variables above as the argumets
 
@@ -73,8 +93,8 @@ const value4 = [value1, value2, value3]
  */
 
 /* btn1 listener */
-btn1.addEventListener('click', () => {
-
+btn1.addEventListener('click', (e) => {
+  FuncOne(value1);
   // Invoke the function to set the first element
 
   // Helpful log statement to test function
@@ -84,7 +104,7 @@ btn1.addEventListener('click', () => {
 
 /* btn2 listener */
 btn2.addEventListener('click', () => {
-
+  FuncTwo(value2);
   // Invoke the function to set the second element 
 
   // Helpful log statement to test function
@@ -94,7 +114,7 @@ btn2.addEventListener('click', () => {
 
 /* btn3 listener */
 btn3.addEventListener('click', () => {
-
+  FuncThree(value3);
   // Invoke the function to set the third element 
 
   // Helpful log statement to test function
@@ -104,7 +124,7 @@ btn3.addEventListener('click', () => {
 
 /* btn4 listener */
 btn4.addEventListener('click', () => {
-
+  FinalFunc(value4);
   // Invoke the function to set the fourth element  
 
   // Helpful log statement to test function
